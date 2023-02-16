@@ -12,7 +12,7 @@ function isTrue(a, obj) {
     return false;
 };
 
-let arrayy = ["PASSWORD","REACT","WARNCOUND","ALIVE_DATA","U_STATUS","READ_CHAT","BOT_INFO","BGMBOT","WORKTYPE","PM_BLOCK","PREFIX","WELCOME_SET","EXIT_MSG","CALL_BLOCK","STATUS_VIEW","MENSION_TEXT","LANG","OWNER","PROFILE_STATUS","BLOCK_CHAT","AUTO_CHAT_PM","AUTO_CHAT_GRP","BOT_PRESENCE","AUDIO_DATA","STICKER_DATA","INSTAGRAM","GIT","CAPTION","SUDO", "FOOTER"];
+let arrayy = ["PASSWORD","REACT","WARNCOUND","ALIVE_DATA","U_STATUS","READ_CHAT","BOT_INFO","BGMBOT","WORKTYPE","PM_BLOCK","PREFIX","WELCOME_SET","EXIT_MSG","CALL_BLOCK","STATUS_VIEW","MENSION_TEXT","LANG","OWNER","PROFILE_STATUS","BLOCK_CHAT","AUTO_CHAT_PM","AUTO_CHAT_GRP","BOT_PRESENCE","AUDIO_DATA","STICKER_DATA","INSTAGRAM","GIT","CAPTION","SUDO", "FOOTER","ALLWAYS_ONLINE"];
 
 function UpdateV(obj) {
  let bcU =obj.split(':')[0].toUpperCase();
@@ -51,6 +51,10 @@ return await message.reply('successfull');
 } else if(keyID == "REACT"){
   if(!isTrue(a, Update.toLowerCase())) return message.reply('need a valid variable for Update! true or false')
   await UpdateVariable("REACT",Update.toLowerCase());
+  return await message.reply('successfull');
+} else if(keyID == "ALLWAYS_ONLINE"){
+  if(!isTrue(a, Update.toLowerCase())) return message.reply('need a valid variable for Update! true or false')
+  await UpdateVariable("ALLWAYS_ONLINE",Update.toLowerCase());
   return await message.reply('successfull');
 } else if(keyID == "WARNCOUND"){
   if(isNaN(Update)) return message.reply('enter a valid value for variable! need Number!');
@@ -185,10 +189,12 @@ inrl(
 	   async (message, client, match) => {
 	  if(!message.client.isCreator) return message.reply('only for owner!!');
       let {PASSWORD,REACT,WARNCOUND,ALIVE_DATA,U_STATUS,READ_CHAT,BOT_INFO,BGMBOT,WORKTYPE,PM_BLOCK,PREFIX,WELCOME_SET,EXIT_MSG,CALL_BLOCK,STATUS_VIEW,MENSION_TEXT,LANG,OWNER,PROFILE_STATUS,BLOCK_CHAT,AUTO_CHAT_PM,AUTO_CHAT_GRP,BOT_PRESENCE,AUDIO_DATA,STICKER_DATA,INSTAGRAM,GIT,CAPTION,SUDO,data} = await getVar();
-      let {FOOTER} = data[0];
+      let {FOOTER,ALLWAYS_ONLINE} = data[0];
       value = match.toUpperCase().trim();
       if(!match){
-   let content = `  PASSWORD :  ${PASSWORD}
+   let content = `
+   ALLWAYS_ONLINE : ${ALLWAYS_ONLINE}
+   PASSWORD :  ${PASSWORD}
    REACT  :  ${REACT}
    FOOTER :${FOOTER}
    WARNCOUND :  ${WARNCOUND}
@@ -227,6 +233,8 @@ return message.reply(`REACT : ${REACT}`);
 return message.reply(`WARNCOUND : ${WARNCOUND}`);
 } else if(value == "ALIVE_DATA"){
 return message.reply(`ALIVE_DATA : ${ALIVE_DATA}`);
+} else if(value == "ALLWAYS_ONLINE"){
+return message.reply(`ALLWAYS_ONLINE : ${ALLWAYS_ONLINE}`);
 } else if(value == "U_STATUS"){
 return message.reply(`U_STATUS : ${U_STATUS}`);
 } else if(value == "READ_CHAT"){
