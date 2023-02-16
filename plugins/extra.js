@@ -1515,10 +1515,10 @@ const Message = {
 
 const maker = require("mumaker");
 inrl( { pattern: ["p1"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1528,10 +1528,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p2"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1541,10 +1541,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p3"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1554,10 +1554,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p4"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1567,10 +1567,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p5"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1580,10 +1580,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p6"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1593,10 +1593,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p7"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1606,10 +1606,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p8"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1619,10 +1619,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p9"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1632,10 +1632,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p10"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1645,10 +1645,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p11"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1658,10 +1658,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p12"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1671,10 +1671,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p13"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1684,10 +1684,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p14"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1697,10 +1697,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p15"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1710,10 +1710,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p16"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1723,10 +1723,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p17"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1736,10 +1736,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p18"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1749,10 +1749,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p19"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1762,10 +1762,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p20"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1775,10 +1775,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p21"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1788,10 +1788,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p22"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1801,10 +1801,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p23"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1814,10 +1814,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p24"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1827,10 +1827,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p25"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1840,10 +1840,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p26"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1853,10 +1853,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p27"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1866,10 +1866,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p28"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1879,10 +1879,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p29"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1892,10 +1892,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["p30"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1905,10 +1905,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["heart"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1918,10 +1918,10 @@ if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = 
   .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
   .catch( async (err) => {  return await client.sendErrorMessage( message.from, err, message.key, message ); });
 });inrl( { pattern: ["summer"], sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-  if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+  if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
   if (message.client.text.length >= 22) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
 let data = await getVar();
-let {BOT_INFO} = data.data[0]
+let {BOT_INFO,CAPTION} = data.data[0]
 let text = message.client.text;
 let text1, text2;
 if (text.includes(',')) {  let split = text.split(',');text1 = split[0];text2 = split[1];  }
@@ -1935,7 +1935,7 @@ config.api.textpro.takes1.map(logo => {
   const { pattern, textLenth, id } = logo; 
   const url = config.api.textpro.domain + id;
   inrl( { pattern, sucReact: "💗", category: ['logo'], usage: '<word>',type :'logo-menu' }, async (message, client) => {
-    if (!message.client.args[0]) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
+    if (!message.client.text) {  return await client.sendMessage( message.from, { text: message.reply(N_T) }, { quoted: message } ); };
     if (message.client.text.length >= textLenth) {  return await client.sendMessage( message.from, { text: message.reply(T_L) }, { quoted: message } ); };
     await maker.textpro( url, [message.client.text, 'inrl'])
     .then( async (data) => {  return await client.sendMessage( message.from, { image: { url: data }, caption: CAPTION }, { quoted: message }); })
@@ -1947,7 +1947,7 @@ inrl({pattern: ['inrl'], desc: "to check i cmds", sucReact: "🙀", category: ['
 return await client.sendMessage( message.from, { text:'```'+ "😇"+ txts+'```' },{ quoted: message });
 });
 inrl({pattern: ['🥲',"😦","🥺","😑","😕","🤧","😔","🙄","🤥","🥴","😐","😒","😢"], desc : "for und",sucReact: "😛", category: ['ibot'], type : "insult" },async (message, client) => {
-   if(!message.client.isCreator && !message.isGroup){
+   if(!message.client.isCreator){
    const texts = await insult();
    return await client.sendMessage( message.from, { text : "😹"+texts },{ quoted: message });
 }});
