@@ -16,8 +16,8 @@ inrl(
     if(!message.client.isCreator) return message.send('only for owner!');
     if(!message.isGroup) return message.reply('this plugin only work on group');
     if(!match) return message.reply('need text!');
-if(match.includes('word')){
-match = match.replaceAll('word','').replaceAll(' ','')
+if(match.includes('word:')){
+match = match.replaceAll('word:','').replaceAll(' ','')
   if(!match) return message.reply('need word?!')
 await setAntiWord(message.from, match);
 return await message.reply('successfully set word!');
@@ -67,13 +67,14 @@ const templateButtons = {
     };
 return await client.sendMessage(message.from,templateButtons, { quoted: await quoted(message).status });
    }
-} else if(match.includes('fake')){
-   match = match.replaceAll('fake','').replaceAll(' ','')
+} else if(match.includes('fake:')){
+   match = match.replaceAll('fake:','').replaceAll(' ','')
+   if(isNaN(match)) return message.reply('enter a valid value for Nmber DB! need Number!');
    if(!match) return message.reply('need starting value  of fake number?!')
    await setFakeNum(message.from, match);
    return await message.reply('successfully set fake number!');
-     } else{
-    return await client.sendMessage(message.from, { text :'```'+ ` need text to set values \nexample :-${prefix}set word for seting badwords \n${prefix}set fake for setting fake number starting values \n${prefix}set pdm for setting promote emote msg\n${prefix}set antilink for setting antilink msg`+'```'});
+     } else {
+    return await client.sendMessage(message.from, { text :'```'+ ` need text to set values \nexample :-${prefix}set word:<value> for seting badwords \n${prefix}set fake:<number> for setting fake number starting values \n${prefix}set pdm for setting promote emote msg\n${prefix}set antilink for setting antilink msg`+'```'});
     }
 });
 
@@ -90,15 +91,16 @@ inrl(
     let prefix  = PREFIX == 'false' ? '' : PREFIX;
     if(!message.client.isCreator) return message.send('only for owner!');
     if(!message.isGroup) return message.reply('this plugin only work on group');
-    if(match.includes('word')){
-match = match.replaceAll('word','').replaceAll(' ','').trim();
+    if(match.includes('word:')){
+match = match.replaceAll('word:','').replaceAll(' ','').trim();
 if(!match) return message.reply('need word?!')
 await removeWord(message.from, match)
 return message.reply('successfully removed');
-    } else if(match.includes('fake')){
-match = match.replaceAll('fake','').replaceAll(' ','')
+    } else if(match.includes('fake:')){
+match = match.replaceAll('fake:','').replaceAll(' ','')
+if(isNaN(match)) return message.reply('enter a valid data for NumberDB! need Number!');
 if(!match) return message.reply('need starting value  of fake number?!')
-await removeAnFake(message.from, match)
+await removeAFake(message.from, match)
 return await message.reply('successfully removed fake number from db');
    } else if(match.includes('pdm')){
     await removePdm(message.from)
