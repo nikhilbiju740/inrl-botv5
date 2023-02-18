@@ -2,10 +2,13 @@ const {getVar}=require('../lib/database/variable');
 
 const bgm = require('../media/bgm.json');
 module.exports = async(msg, conn, m, store) => {
+if((m.key.id.startsWith("BAE5") && m.key.id.length == 16)) return;
 let data = await getVar();
 const {BGMBOT,PREFIX} = data.data[0];
 let prefix = PREFIX =='false' ? '': PREFIX;
-if(m.client.body.startsWith(prefix)) return;
+let prefix = PREFIX =='false' ? '': PREFIX;
+let isFalseOrNot = prefix==''?'i£':prefix;
+if(m.client.body.startsWith(isFalseOrNot)) return;
  let audios=[], mp3, chk=[];
  let add = m.client.body.toLowerCase().trim();
  if(add.includes(' ')){
