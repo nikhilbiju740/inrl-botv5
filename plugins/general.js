@@ -55,7 +55,7 @@ inrl({
 	   const groupMetadata = message.isGroup ? await client.groupMetadata(message.from).catch(e => {}) : ''
 	   const participants = message.isGroup ? await groupMetadata.participants : ''
            let admins = message.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
-           if(!message.client.isCreator) return message.replt('only for owner!');
+           if(!message.client.isCreator) return message.reply('only for owner!');
 		let msg = "╭─❮ ʜᴇy ᴀʟʟ 😛🪄 ❯ ─⊷❍\n", ext;
                 let count =1;
                 ext = `│${message.quoted?message.quoted.text||'hi all😚':match||'hi all🤎'}\n`
@@ -78,7 +78,7 @@ inrl({
 	   const groupMetadata = message.isGroup ? await client.groupMetadata(message.from).catch(e => {}) : ''
 	   const participants = message.isGroup ? await groupMetadata.participants : ''
            let admins = message.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
-           if(!message.client.isCreator) return message.replt('only for owner!');
+           if(!message.client.isCreator) return message.reply('only for owner!');
 	   let msg = "╭─❮ ʜᴇy ᴀᴅᴍɪɴꜱ🪄 ❯ ─⊷❍\n", ext;
            ext = `│${message.quoted?message.quoted.text||'hi all😚':match||'hi all🤎'}\n`
            msg += (typeof ext !== 'string'?'hy all😚':ext)
