@@ -6,7 +6,6 @@ if((m.key.id.startsWith("BAE5") && m.key.id.length == 16)) return;
 let data = await getVar();
 const {BGMBOT,PREFIX} = data.data[0];
 let prefix = PREFIX =='false' ? '': PREFIX;
-let prefix = PREFIX =='false' ? '': PREFIX;
 let isFalseOrNot = prefix==''?'i£':prefix;
 if(m.client.body.startsWith(isFalseOrNot)) return;
  let audios=[], mp3, chk=[];
