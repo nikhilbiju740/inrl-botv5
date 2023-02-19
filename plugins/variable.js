@@ -166,7 +166,7 @@ return await message.reply('successfull');
 } else if(keyID == "STICKER_DATA"){
   if(!Update.includes(',')) return message.reply('enter a valid format! example :- inrl, inrl, https:example.png');
   let test = Update.split(',');
-  if(test.length < 3) return message.reply('enter a valid format! example :- inrl, inrl, https:example.png');
+  if(test.length < 2) return message.reply('enter a valid format! example :- inrl, inrl, https:example.png');
   await UpdateVariable("STICKER_DATA",Update);
   return await message.reply('successfull');
 } else if(keyID == "INSTAGRAM"){
