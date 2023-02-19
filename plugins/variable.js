@@ -12,7 +12,7 @@ function isTrue(a, obj) {
     return false;
 };
 
-let arrayy = ["PASSWORD","REACT","WARNCOUND","ALIVE_DATA","U_STATUS","READ_CHAT","BOT_INFO","BGMBOT","WORKTYPE","PM_BLOCK","PREFIX","WELCOME_SET","EXIT_MSG","CALL_BLOCK","STATUS_VIEW","MENSION_TEXT","LANG","OWNER","PROFILE_STATUS","BLOCK_CHAT","AUTO_CHAT_PM","AUTO_CHAT_GRP","BOT_PRESENCE","AUDIO_DATA","STICKER_DATA","INSTAGRAM","GIT","CAPTION","SUDO", "FOOTER","ALLWAYS_ONLINE"];
+let arrayy = ["PASSWORD","REACT","WARNCOUND","ALIVE_DATA","U_STATUS","READ_CHAT","BOT_INFO","BGMBOT","WORKTYPE","PM_BLOCK","PREFIX","WELCOME_SET","EXIT_MSG","CALL_BLOCK","STATUS_VIEW","MENSION_TEXT","LANG","OWNER","PROFILE_STATUS","BLOCK_CHAT","AUTO_CHAT_PM","AUTO_CHAT_GRP","BOT_PRESENCE","AUDIO_DATA","STICKER_DATA","INSTAGRAM","GIT","CAPTION","SUDO", "FOOTER","ALLWAYS_ONLINE","PMB_MSG","PMBC_MSG","AUTOMUTE_MSG","AUTOUNMUTE_MSG"];
 
 function UpdateV(obj) {
  let bcU =obj.split(':')[0].toUpperCase();
@@ -63,8 +63,19 @@ return await message.reply('successfull');
 } else if(keyID == "ALIVE_DATA"){
   await UpdateVariable("ALIVE_DATA",Update);
   return await message.reply('successfull');
+} else if(keyID == "PMB_MSG"){
+  await UpdateVariable("PMB_MSG",Update);
+  return await message.reply('successfull');
+} else if(keyID == "PMBC_MSG"){
+  await UpdateVariable("PMBC_MSG",Update);
+  return await message.reply('successfull');
+} else if(keyID == "AUTOMUTE_MSG"){
+  await UpdateVariable("AUTOMUTE_MSG",Update);
+  return await message.reply('successfull');
+} else if(keyID == "AUTOUNMUTE_MSG"){
+  await UpdateVariable("AUTOUNMUTE_MSG",Update);
+  return await message.reply('successfull');
 } else if(keyID == "FOOTER"){
-    console.log(Update)
   await UpdateVariable("FOOTER",Update);
   return await message.reply('successfull');
 } else if(keyID == "U_STATUS"){
@@ -188,7 +199,7 @@ inrl(
     },
 	   async (message, client, match) => {
 	  if(!message.client.isCreator) return message.reply('only for owner!!');
-      let {PASSWORD,REACT,WARNCOUND,ALIVE_DATA,U_STATUS,READ_CHAT,BOT_INFO,BGMBOT,WORKTYPE,PM_BLOCK,PREFIX,WELCOME_SET,EXIT_MSG,CALL_BLOCK,STATUS_VIEW,MENSION_TEXT,LANG,OWNER,PROFILE_STATUS,BLOCK_CHAT,AUTO_CHAT_PM,AUTO_CHAT_GRP,BOT_PRESENCE,AUDIO_DATA,STICKER_DATA,INSTAGRAM,GIT,CAPTION,SUDO,data} = await getVar();
+      let {PASSWORD,REACT,WARNCOUND,ALIVE_DATA,U_STATUS,READ_CHAT,BOT_INFO,BGMBOT,WORKTYPE,PM_BLOCK,PREFIX,WELCOME_SET,EXIT_MSG,CALL_BLOCK,STATUS_VIEW,MENSION_TEXT,LANG,OWNER,PROFILE_STATUS,BLOCK_CHAT,AUTO_CHAT_PM,AUTO_CHAT_GRP,BOT_PRESENCE,AUDIO_DATA,STICKER_DATA,INSTAGRAM,GIT,CAPTION,SUDO,PMB_MSG,PMBC_MSG,AUTOMUTE_MSG,AUTOUNMUTE_MSG,data} = await getVar();
       let {FOOTER,ALLWAYS_ONLINE} = data[0];
       value = match.toUpperCase().trim();
       if(!match){
@@ -204,6 +215,10 @@ inrl(
    BOT_INFO :  ${BOT_INFO}
    BGMBOT :  ${BGMBOT}
    WORKTYPE :  ${WORKTYPE}
+   PMB_MSG : ${PMB_MSG}
+   PMBC_MSG : ${PMBC_MSG}
+   AUTOMUTE_MSG : ${AUTOMUTE_MSG}
+   AUTOUNMUTE_MSG : ${AUTOUNMUTE_MSG}
    PM_BLOCK :  ${PM_BLOCK} 
    PREFIX :  ${PREFIX}
    WELCOME_SET :  ${WELCOME_SET}
@@ -283,6 +298,14 @@ return message.reply(`INSTAGRAM : ${INSTAGRAM}`);
 return message.reply(`GIT : ${GIT}`);
 } else if(value == "CAPTION"){
 return message.reply(`CAPTION : ${CAPTION}`);
+}else if(value == "PMB_MSG"){
+return message.reply(`PMB_MSG : ${PMB_MSG}`);
+}else if(value == "PMBC_MSG"){
+return message.reply(`PMBC_MSG : ${PMBC_MSG}`);
+}else if(value == "AUTOMUTE_MSG"){
+return message.reply(`AUTOMUTE_MSG : ${AUTOMUTE_MSG}`);
+}else if(value == "AUTOUNMUTE_MSG"){
+return message.reply(`AUTOUNMUTE_MSG : ${AUTOUNMUTE_MSG}`);
 } else if(value == "SUDO"){
 return message.reply(`SUDO : ${SUDO}`);
 } else if(value == "FOOTER"){
