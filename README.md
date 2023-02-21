@@ -19,20 +19,27 @@
 
 [Click Here To Scan](https://frendpage.vercel.app/)
 
+## `⨷ Deploy To Mogenius` 
+
+```bash
+click the below button to deploy on heroku!
+```
+  [Click here to deploy on Mogenius](https://studio.mogenius.com/studio/cloud-space/cloud-space-overview)
+<br>
+
+## `⨷ Deploy To Heroku` 
+
+```bash
+click the below button to deploy on heroku!
+```
+  [Click here to deploy on heroku](https://inrl-web.vercel.app/deploy/heroku)
+<br>
+
 ## `⨷ Deploy To Uffizzi` 
 
 ```bash
 first you fork the repo and edit config.js!, add session id & your credits!
 ```
-
-- [x] Login <details><summary>example</summary><img src="https://i.ibb.co/Y8n1hnk/7f6c49deeb42.jpg"></details>
-- [x] Select Repo<details><summary>example</summary><img src="https://i.ibb.co/42ppV9c/70fa4e474d5e.jpg"></details>
-- [x] configur <details><summary>example</summary><img src="https://i.ibb.co/c26hpgc/0fc10710ae83.jpg"></details>
-- [x] Deploy <details><summary>example</summary><img src="https://i.ibb.co/RydYv7s/881ac813427c.jpg"></details>
-- [x] Get app <details><summary>example</summary><img src="https://i.ibb.co/wwZG0YM/52300009ed1c.jpg"></details>
-- [x] Open app <details><summary>example</summary><img src="https://i.ibb.co/J7GTZq5/f5d7a68c7a2f.jpg"></details>
-- [x] Viwe Logs <details><summary>example</summary><img src="https://i.ibb.co/2yQTJPJ/7535df5f1de7.jpg"></details>
-
   [Click here to deploy on Uffizzi](https://app.uffizzi.com/projects)
 <br>
 
