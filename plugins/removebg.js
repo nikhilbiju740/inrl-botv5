@@ -14,6 +14,7 @@ inrl(
 	async (message, client) => {
     let data = await getVar();
     let {CAPTION}=data.data[0]
+if(!message.quoted) return message.reply('reply to a img msg!')
 if(!message.quoted.imageMessage) return message.reply('reply to a img msg!')
 let img = await client.downloadAndSaveMediaMessage(message.quoted.imageMessage)
 let rmbgimg = await remove(fs.readFileSync(img))
@@ -38,8 +39,8 @@ inrl(
     }
     gis(match, async (error, results) => {
         if (error) return;
-          let data = await results.length
-          let img = await results[Math.floor(data * Math.random())]
-await client.sendMessage(message.from,{ image : {url : img.url }, caption : CAPTION }, {quoted: message})
+        let data = await results.length
+        let img = await results[Math.floor(data * Math.random())]
+    return await client.sendMessage(message.from,{ image : {url : img.url }, caption : CAPTION }, {quoted: message})
    })
 });
