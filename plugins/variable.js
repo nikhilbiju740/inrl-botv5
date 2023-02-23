@@ -12,7 +12,7 @@ function isTrue(a, obj) {
     return false;
 };
 
-let arrayy = ["PASSWORD","REACT","WARNCOUND","ALIVE_DATA","U_STATUS","READ_CHAT","BOT_INFO","BGMBOT","WORKTYPE","PM_BLOCK","PREFIX","WELCOME_SET","EXIT_MSG","CALL_BLOCK","STATUS_VIEW","MENSION_TEXT","LANG","OWNER","PROFILE_STATUS","BLOCK_CHAT","AUTO_CHAT_PM","AUTO_CHAT_GRP","BOT_PRESENCE","AUDIO_DATA","STICKER_DATA","INSTAGRAM","GIT","CAPTION","SUDO", "FOOTER","ALLWAYS_ONLINE","PMB_MSG","PMBC_MSG","AUTOMUTE_MSG","AUTOUNMUTE_MSG"];
+let arrayy = ["MENSION_IMG","MENSION_AUDIO","PASSWORD","REACT","WARNCOUND","ALIVE_DATA","U_STATUS","READ_CHAT","BOT_INFO","BGMBOT","WORKTYPE","PM_BLOCK","PREFIX","WELCOME_SET","EXIT_MSG","CALL_BLOCK","STATUS_VIEW","MENSION_TEXT","LANG","OWNER","PROFILE_STATUS","BLOCK_CHAT","AUTO_CHAT_PM","AUTO_CHAT_GRP","BOT_PRESENCE","AUDIO_DATA","STICKER_DATA","INSTAGRAM","GIT","CAPTION","SUDO", "FOOTER","ALLWAYS_ONLINE","PMB_MSG","PMBC_MSG","AUTOMUTE_MSG","AUTOUNMUTE_MSG"];
 
 function UpdateV(obj) {
  let bcU =obj.split(':')[0].toUpperCase();
@@ -55,6 +55,14 @@ return await message.reply('successfull');
 } else if(keyID == "ALLWAYS_ONLINE"){
   if(!isTrue(a, Update.toLowerCase())) return message.reply('need a valid variable for Update! true or false')
   await UpdateVariable("ALLWAYS_ONLINE",Update.toLowerCase());
+  return await message.reply('successfull');
+} else if(keyID == "MENSION_IMG"){
+  if(!Update.includes("gist")||!Update.includes("http")) return message.reply('need a gist url!');
+  await UpdateVariable("MENSION_IMG",Update.trim());
+  return await message.reply('successfull');
+} else if(keyID == "MENSION_AUDIO"){
+  if(!Update.includes("gist")||!Update.includes("http")) return message.reply('need a gist url!');
+  await UpdateVariable("MENSION_AUDIO",Update.trim());
   return await message.reply('successfull');
 } else if(keyID == "WARNCOUND"){
   if(isNaN(Update)) return message.reply('enter a valid value for variable! need Number!');
@@ -199,11 +207,13 @@ inrl(
     },
 	   async (message, client, match) => {
 	  if(!message.client.isCreator) return message.reply('only for owner!!');
-      let {PASSWORD,REACT,WARNCOUND,ALIVE_DATA,U_STATUS,READ_CHAT,BOT_INFO,BGMBOT,WORKTYPE,PM_BLOCK,PREFIX,WELCOME_SET,EXIT_MSG,CALL_BLOCK,STATUS_VIEW,MENSION_TEXT,LANG,OWNER,PROFILE_STATUS,BLOCK_CHAT,AUTO_CHAT_PM,AUTO_CHAT_GRP,BOT_PRESENCE,AUDIO_DATA,STICKER_DATA,INSTAGRAM,GIT,CAPTION,SUDO,PMB_MSG,PMBC_MSG,AUTOMUTE_MSG,AUTOUNMUTE_MSG,data} = await getVar();
+      let {MENSION_IMG, MENSION_AUDIO,PASSWORD,REACT,WARNCOUND,ALIVE_DATA,U_STATUS,READ_CHAT,BOT_INFO,BGMBOT,WORKTYPE,PM_BLOCK,PREFIX,WELCOME_SET,EXIT_MSG,CALL_BLOCK,STATUS_VIEW,MENSION_TEXT,LANG,OWNER,PROFILE_STATUS,BLOCK_CHAT,AUTO_CHAT_PM,AUTO_CHAT_GRP,BOT_PRESENCE,AUDIO_DATA,STICKER_DATA,INSTAGRAM,GIT,CAPTION,SUDO,PMB_MSG,PMBC_MSG,AUTOMUTE_MSG,AUTOUNMUTE_MSG,data} = await getVar();
       let {FOOTER,ALLWAYS_ONLINE} = data[0];
       value = match.toUpperCase().trim();
       if(!match){
    let content = `
+   MENSION_IMG : ${MENSION_IMG}
+   MENSION_AUDIO : ${MENSION_AUDIO}
    ALLWAYS_ONLINE : ${ALLWAYS_ONLINE}
    PASSWORD :  ${PASSWORD}
    REACT  :  ${REACT}
@@ -244,6 +254,10 @@ return message.reply(content);
 return message.reply(`PASSWORD : ${PASSWORD}`);
 } else if(value == "REACT"){
 return message.reply(`REACT : ${REACT}`);
+} else if(value == "MENSION_AUDIO"){
+return message.reply(`MENSION_AUDIO : ${MENSION_AUDIO}`);
+} else if(value == "MENSION_IMG"){
+return message.reply(`MENSION_IMG : ${MENSION_IMG}`);
 } else if(value == "WARNCOUND"){
 return message.reply(`WARNCOUND : ${WARNCOUND}`);
 } else if(value == "ALIVE_DATA"){
