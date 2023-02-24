@@ -345,14 +345,15 @@ inrl(
 	   } else value = match.split(':')[1];
 	   if(value ===undefined) return message.reply('need id & value,example: setvar sudo:91404044404044');
        let {SUDO,BLOCK_CHAT} = await getVar();
-       if(isNaN(value)) return message.reply('enter a valid data! need Number!');
        if(KeyID == "SUDO"){
+       if(isNaN(value)) return message.reply('enter a valid data! need Number!');
        if(!SUDO.includes(value)) return message.reply('this User not existing in your SudoDB!');
        value = SUDO.replaceAll(','+value,"")||SUDO.replaceAll(value+',',"")||SUDO.replaceAll(value,"");
        message.reply(value)
        await UpdateVariable("SUDO",value);
        return await message.reply('successfull');
        } else if(KeyID == "BLOCK_CHAT"){
+       if(!Update.endsWith('net')&&!Update.endsWith('us')) return message.reply('enter a valid value for variable! need Number!');
        if(!BLOCK_CHAT.includes(value)) return message.reply('this User not existing in your SudoDB!');
        value = BLOCK_CHAT.replace(value);
        await UpdateVariable("BLOCK_CHAT",value);
