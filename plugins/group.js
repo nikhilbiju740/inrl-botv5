@@ -276,9 +276,10 @@ try {
   const Isadmin = await isAdmin(message, client);
   const {text, document, audio, gift, gclink, video, local, contact, status }= await quoted(message);
     if(!message.client.isCreator && !Isadmin) return message.reply('only for owner!');
+    if(!message.isGroup || !match) return ("need grp url and only work in grp");
         let urlArray = (match).trim().split("/")[3]; 
-        let { id, owner, subject, subjectOwner, subjectTime, creation, desc, descOwner, descId, restrict, announce, size, participants, ephemeralDuration, } = await client.groupGetInviteInfo(urlArray);
-        await client.sendMessage( message.from, { text: `💗 Joined: ${id}\n ${owner} \n${subject} \n${subjectOwner} \n${subjectTime} \n${creation} \n${desc} \n${descOwner} \n${descId} \n${restrict} \n${announce} \n${size} \n${ephemeralDuration}` }, { quoted: status } );      
+        let { id, owner, subject, subjectOwner, subjectTime, creation, desc, descOwner, descId, restrict, announce, size, participants } = await client.groupGetInviteInfo(urlArray);
+        await client.sendMessage( message.from, { text: `💗 Joined: ${id}\n ${owner} \n${subject} \n${subjectOwner} \n${subjectTime} \n${creation} \n${desc.toString()} \n${descOwner} \n${descId} \n${restrict} \n${announce} \n${size}` }, { quoted: status } );      
 } catch (e){
 message.reply(JSON.stringify(e))
      }
@@ -288,7 +289,7 @@ inrl({ pattern: ["pp"],desc: 'set  profile picture of bot', sucReact: "😁",  c
 	async (message, client, match) => {
 try {
 	if(!message.client.isCreator) return message.reply('cant possible to update your profile picture');
-    if(!message.quoted) return messag.reply('reply to an image!');
+        if(!message.quoted) return messag.reply('reply to an image!');
 	let _message = message.quoted.imageMessage;
 	let download = await client.downloadMediaMessage(_message);
     await client.updateProfilePicture(message.client.botNumber,download ).catch((err) => fs.unlinkSync(download))
