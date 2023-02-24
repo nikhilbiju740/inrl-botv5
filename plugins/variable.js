@@ -190,7 +190,7 @@ return await message.reply('successfull');
   return await message.reply('successfull');
 } else if(keyID == "SUDO"){
   if(isNaN(Update)) return message.reply('enter a valid value for variable! need Number!');
-  if(SUDO.includes(Update)) return message.reply('this User already existing in your SudoDB!');
+  if(!Update.endsWith('net')&&!Update.endsWith('us')) return message.reply('this User already existing in your SudoDB!');
   Update = SUDO+','+Update;
   await UpdateVariable("SUDO",Update);
   return await message.reply('successfull');
