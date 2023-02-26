@@ -86,7 +86,7 @@ inrl(
         type : "system"
 	   }, async (message, client, match, cmd) => {
 	   const {PREFIX,FOOTER} = await getVar();
-	   let perfix  = PREFIX == 'false' ? '' : PREFIX;
+	   let prefix  = PREFIX == 'false' ? '' : PREFIX;
 	   let valueie = await withValue();
 	   if(!message.client.isCreator) return await message.replay("action only for owner!");
        if(!match) return ;
