@@ -85,19 +85,19 @@ async (message, client, match) => {
         if(match){
         let users = match.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
         const su = await client.groupParticipantsUpdate(message.from, [users], "add" );
-        if(su == 403) {
+        if(su[0].status == 403) {
 		message.reply(`Couldn't Add Invite Send`);
 		const code = await client.groupInviteCode(message.from);
 		return await client.sendMessage(users, { text : `https://chat.whatsapp.com/${code}`}, { quoted : text })
-	    } else if (su == 408) {
+	    } else if (su[0].status == 408) {
 		message.reply(`Couldn't add @${users.split('@')[0]} because they left the group recently. Try again later.`);
 		const code = await client.groupInviteCode(message.from);
 		return await client.sendMessage(users, { text : `https://chat.whatsapp.com/${code}`}, { quoted : video })
-	    } else if (su == 401) {
+	    } else if (su[0].status == 401) {
 		 return message.reply(`Couldn't add @${users.split('@')[0]} because they blocked the bot number.`);
-	    } else if (su == 200) {
+	    } else if (su[0].status == 200) {
 		return await client.sendMessage(message.from, { text : '_'+message.quoted.sender.split('@')[0] +' added to the group_'}, { quoted : gclink })
-	    } else if (su == 409) {
+	    } else if (su[0].status == 409) {
 		return message.reply(`@${users.split('@')[0]}, Already in Group`);
 	    } else {
 		return await message.reply(JSON.stringify(su));
@@ -105,19 +105,19 @@ async (message, client, match) => {
         }else if(message.quoted){
         let users = message.quoted.sender;
         const su = await client.groupParticipantsUpdate( message.from, [users], "add" );
-        if(su == 403) {
+        if(su[0].status == 403) {
 		message.reply(`Couldn't Add Invite Send`);
 		const code = await client.groupInviteCode(message.from);
 		return await client.sendMessage(users, { text : `https://chat.whatsapp.com/${code}`}, { quoted : text })
-	    } else if (su == 408) {
+	    } else if (su[0].status == 408) {
 		message.reply(`Couldn't add @${users.split('@')[0]} because they left the group recently. Try again later.`);
 		const code = await client.groupInviteCode(message.from);
 		return await client.sendMessage(users, { text : `https://chat.whatsapp.com/${code}`}, { quoted : video })
-	    } else if (su == 401) {
+	    } else if (su[0].status == 401) {
 		 return message.reply(`Couldn't add @${users.split('@')[0]} because they blocked the bot number.`);
-	    } else if (su == 200) {
+	    } else if (su[0].status == 200) {
 		return await client.sendMessage(message.from, { text : '_'+message.quoted.sender.split('@')[0] +' added to the group_'}, { quoted : gclink })
-	    } else if (su == 409) {
+	    } else if (su[0].status == 409) {
 		return message.reply(`@${users.split('@')[0]}, Already in Group`);
 	    } else {
 		return await message.reply(JSON.stringify(su));
