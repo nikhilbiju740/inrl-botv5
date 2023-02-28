@@ -23,7 +23,7 @@ if(m.client.body.startsWith(isFalseOrNot)) return;
  let a = [];a.push(key)
   a.map((a)=>{
   chk.forEach((c)=>{
-  if(c.match(a)){
+  if(c.match(a.toLowerCase())){
   mp3 = bgm[key];
   audios.push(mp3)
   mp3 = audios[Math.floor(Math.random() * audios.length)];
