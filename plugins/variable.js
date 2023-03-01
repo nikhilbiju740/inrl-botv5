@@ -1,6 +1,6 @@
 const { inrl } = require('../lib');
 const {getVar,UpdateVariable} = require('../lib/database/variable')
-let a = ["true", "false"], type = ["privet","public"],response  = ["unavailable","available","composing","recording","paused"], sb = ["SUDO","BLOCK_CHAT"];
+let a = ["true", "false"], type = ["privet","public"],response  = ["unavailable","available","composing","recording","paused"], sb = ["SUDO","BLOCK_CHAT","OWNER"];
 //const {exec} = require('chile
 
 function isTrue(a, obj) {
