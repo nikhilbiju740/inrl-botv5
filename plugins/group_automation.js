@@ -11,6 +11,7 @@ setInterval(async () => {
   mute.map(async({jid,time})=>{
   time2 = moment().tz('Asia/Kolkata').format('HH:mm');
   if(time2 == time){
+  if(!jid?.trim()) return;
   const groupMetadata = await conn.groupMetadata(jid).catch(e => {});
   const participants = await groupMetadata.participants;
   let admins = await participants.filter(v => v.admin !== null).map(v => v.id);
@@ -24,6 +25,7 @@ setInterval(async () => {
   unmute.map(async({jid,time})=>{
   time1 = moment().tz('Asia/Kolkata').format('HH:mm');
   if(time1 == time){
+  if(!jid?.trim()) return;
   const groupMetadata = await conn.groupMetadata(jid).catch(e => {});
   const participants = await groupMetadata.participants;
   let admins = await participants.filter(v => v.admin !== null).map(v => v.id);
@@ -31,7 +33,7 @@ setInterval(async () => {
   return await conn.groupSettingUpdate(jid, "not_announcement");
     }
   })
- }, 1000 * 20);
+ }, 1000 * 27);
 }
 //automaton plugins
 inrl({
