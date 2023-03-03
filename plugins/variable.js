@@ -353,7 +353,7 @@ inrl(
        await UpdateVariable("SUDO",value);
        return await message.reply('successfull');
        } else if(KeyID == "BLOCK_CHAT"){
-       if(!Update.endsWith('net')&&!Update.endsWith('us')) return message.reply('enter a valid value for variable! need Number!');
+       if(!value.endsWith('net')&&!value.endsWith('us')) return message.reply('enter a valid value for variable! need Number!');
        if(!BLOCK_CHAT.includes(value)) return message.reply('this User not existing in your SudoDB!');
        value = BLOCK_CHAT.replace(value);
        await UpdateVariable("BLOCK_CHAT",value);
