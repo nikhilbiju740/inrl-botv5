@@ -21,7 +21,7 @@ const isAdmin = async (message, client, match) => {
         type :"info"
 	   },
 	async (m, conn, match ) => {
-        if(!message.client.isCreator) return message.reply('only for owner!')
+        if(!m.client.isCreator) return m.reply('only for owner!')
             if (!m.isGroup) return m.reply("this plugin only works in group!");
             const groupMetadata = m.isGroup ? await conn.groupMetadata(m.key.remoteJid).catch((e) => {}) : "";
             const participants = m.isGroup ? await groupMetadata.participants : "";
