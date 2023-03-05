@@ -1,4 +1,3 @@
-
 const os = require("os");
 const got = require('got')
 const speed = require("performance-now");
@@ -183,6 +182,7 @@ bots.commands.map((command) => {
  inrl({pattern: ['owner'], desc: "to check whether", sucReact: "🥺", category: ['all'],type : 'utility' },   async (message, client) => {
   let data = await getVar();
   let {FOOTER,BOT_INFO,PREFIX,GIT,OWNER}=data.data[0];
+  let mension = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": ""}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: await getBuffer(BOT_INFO.split(',')[2]), surface: 200, message: BOT_INFO.split(',')[0], orderTitle: BOT_INFO.split(',')[1], sellerJid: client.user.jid }}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
   let prefix  = PREFIX == 'false' ? '' : PREFIX;
   const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
@@ -190,7 +190,7 @@ bots.commands.map((command) => {
             + 'ORG:'+FOOTER+';\n' // the organization of the contact
             + 'TEL;type=CELL;type=VOICE;waid='+OWNER+':'+OWNER+'\n' // WhatsApp ID + phone number
             + 'END:VCARD'
-return await client.sendMessage( message.from, { contacts:{ displayName:`${BOT_INFO.split(",")[0]}`, contacts: [{ vcard }],}})
+return await client.sendMessage( message.from, { contacts:{ displayName:`${BOT_INFO.split(",")[0]}`, contacts: [{ vcard }],}},{ quoted: mension })
 });
 const GDM = "it sends good morning message";
 const GDN = "it sends Night message";
@@ -336,11 +336,11 @@ return await client.sendMessage(message.from, { text : NewText });
     }
          var split = text.split(',');
          Num = split[0] || match || "55";
-         Text = message.quoted.text || split[1] || "enter A text with number ex 31,text";
+         Text = message?.quoted?.text || split[1] || "enter A text with number ex 31,text";
 let ThenText = await styletext(Text, Num)
 return await client.sendMessage(message.from, { text : ThenText });
  } catch (e){
- return message.reply(JSON.stringify(e))
+ return message.reply('need key and values ex :- { fancy 5,hhi }')
         }
     }
 );
