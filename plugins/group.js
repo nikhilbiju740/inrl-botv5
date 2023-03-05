@@ -31,6 +31,7 @@ const isAdmin = async (message, client, match) => {
             }, {
                 quoted: m,
             });
+ });
 inrl({ pattern: ["promote"], usage: '<mentions|reply>', sucReact: "😎", category: ["group", "all"], type :'group'},
   async (message, client, match) => {
 try {
