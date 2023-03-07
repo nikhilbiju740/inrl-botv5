@@ -1,4 +1,3 @@
-
 # *Inrl Multi-Device whatsapp Bot*
 <div align="center">
   
@@ -17,12 +16,12 @@
 
 - To use This bot you need to scan the qr code<br>
 
-[Click Here To Scan](https://frendpage.vercel.app/)
+[Click Here To Scan](https://inrl-web.onrender.com/viwe/friendpage)
 
 ## `⨷ Deploy To Mogenius` 
 
 ```bash
-click the below button to deploy on heroku!
+click the below button to deploy on Mogenius!
 ```
   [Click here to deploy on Mogenius](https://studio.mogenius.com/studio/cloud-space/cloud-space-overview)
 <br>
@@ -32,7 +31,7 @@ click the below button to deploy on heroku!
 ```bash
 click the below button to deploy on heroku!
 ```
-  [Click here to deploy on heroku](https://inrl-web.vercel.app/deploy/heroku)
+  [Click here to deploy on heroku](https://inrl-web.onrender.com/deploy/heroku)
 <br>
 
 ## `⨷ Deploy To Uffizzi` 
