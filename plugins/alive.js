@@ -182,7 +182,13 @@ bots.commands.map((command) => {
  inrl({pattern: ['owner'], desc: "to check whether", sucReact: "🥺", category: ['all'],type : 'utility' },   async (message, client) => {
   let data = await getVar();
   let {FOOTER,BOT_INFO,PREFIX,GIT,OWNER}=data.data[0];
-  let mension = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": ""}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: await getBuffer(BOT_INFO.split(',')[2]), surface: 200, message: BOT_INFO.split(',')[0], orderTitle: BOT_INFO.split(',')[1], sellerJid: client.user.jid }}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+	try {
+                  ppuser = await client.profilePictureUrl(client.user.jid, 'image')
+            } 
+	catch {
+                       ppuser = 'https://i.ibb.co/gdp7HrS/8390ad4fefbd.jpg'
+            }
+  let mension = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": ""}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: await getBuffer(ppuser), surface: 200, message: BOT_INFO.split(',')[0], orderTitle: BOT_INFO.split(',')[1], sellerJid: client.user.jid }}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
   let prefix  = PREFIX == 'false' ? '' : PREFIX;
   const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
@@ -190,7 +196,7 @@ bots.commands.map((command) => {
             + 'ORG:'+FOOTER+';\n' // the organization of the contact
             + 'TEL;type=CELL;type=VOICE;waid='+OWNER+':'+OWNER+'\n' // WhatsApp ID + phone number
             + 'END:VCARD'
-return await client.sendMessage( message.from, { contacts:{ displayName:`${BOT_INFO.split(",")[0]}`, contacts: [{ vcard }],}},{ quoted: mension })
+return await client.sendMessage(message.from, { contacts:{ displayName:`${BOT_INFO.split(",")[0]}`, contacts: [{ vcard }],}},{ quoted: mension })
 });
 const GDM = "it sends good morning message";
 const GDN = "it sends Night message";
@@ -213,7 +219,7 @@ let returNtxt = await r_text[i]
 );
 
 inrl(
-  { pattern: ["ge", "good evening", "evening"], desc: "good evening", sucReact: "💖", category: ["chat"], type :'chat'  },
+  { pattern: ["evening"], desc: "good evening", sucReact: "💖", category: ["chat"], type :'chat'  },
   async (message, client) => {
     var r_text = new Array();
 r_text[0] = "😻ɢᴏᴏᴅ 💗ᴇᴠᴇɴɪɴɢ",
@@ -231,7 +237,7 @@ return await client.sendMessage( message.from, { text: returNtxt + message.clien
 );
 
 inrl(
-  { pattern: ["gn", "gdnight", "goodnight","gd8","gdn8"], desc: GDN, sucReact: "💖", category: ["chat"], type :'chat'  },
+  { pattern: ["gdnight"], desc: GDN, sucReact: "💖", category: ["chat"], type :'chat'  },
   async (message, client) => {
     var r_text = new Array();
     r_text[0] = "😘𝙂𝙤𝙤𝙙 🙈𝙣𝙞𝙜𝙝𝙩 💫✨";
@@ -245,7 +251,7 @@ return await client.sendMessage( message.from, { text: returNtxt + message.clien
   }
 );
 inrl(
-  { pattern: ["ga", "gdafternoon", "goodafternoon","gda",], desc: GDN, sucReact: "💖", category: ["chat"], type :'chat'  },
+  { pattern: ["gdafternoon"], desc: GDN, sucReact: "💖", category: ["chat"], type :'chat'  },
   async (message, client) => {
     var r_text = new Array();
     r_text[0] = "😘Ꮆㄖㄖᗪ 🥵卂千ㄒ乇尺几ㄖㄖ几💫✨";
@@ -287,7 +293,7 @@ _ex_ : Enter a text like this *fancy 55,hi*
 13 defult
 14 F͎a͎n͎c͎y͎
 15 F͓̽a͓̽n͓̽c͓̽y͓̽
-16 ☞︎♋︎■︎♍︎⍓︎
+16 fancy
 17 Fａncｙ
 18 ҒΔΠCΨ
 19 千卂几匚ㄚ
@@ -334,9 +340,12 @@ _ex_ : Enter a text like this *fancy 55,hi*
 _ex_ : Enter a text like this *fancy 55,hi*`
 return await client.sendMessage(message.from, { text : NewText });
     }
-         var split = text.split(',');
+         let split = text.split(',');
          Num = split[0] || match || "55";
-         Text = message?.quoted?.text || split[1] || "enter A text with number ex 31,text";
+         Text = split[1] || "enter A text with number ex 31,text";
+if(message.quoted){
+Text = message.quoted.text||split[1]||"need text and key mr!";
+}
 let ThenText = await styletext(Text, Num)
 return await client.sendMessage(message.from, { text : ThenText });
  } catch (e){
