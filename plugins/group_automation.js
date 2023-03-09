@@ -4,6 +4,7 @@ const { inrl } = require('../lib/');
 const {isInAutoDb,getAutomutes,getAutoUnMutes,add_Schedule,dlt_Schedule} = require('../lib/database/automation')
 
 module.exports = async(msg, conn, m, store) => {
+process.setMaxListeners(0);
 let time2,time1;
 setInterval(async () => {
   let mute = await getAutomutes();
