@@ -102,8 +102,8 @@ inrl(
     category: ["system", "all"],
     type : 'info'
   },
-  async (message, client) => {
-return await send_alive(message, client)
+  async (message, client, match) => {
+return await send_alive(message, client, match)
 });
 inrl(
   {
