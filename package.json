@@ -27,6 +27,7 @@
     "@adiwajshing/keyed-db": "^0.2.4",
     "aes256": "^1.1.0",
     "awesome-phonenumber": "^2.64.0",
+    "heroku-client": "^3.1.0",
     "axios": "^0.27.2",
     "browser-id3-writer": "4.4.0",
     "chalk": "^4.1.2",
