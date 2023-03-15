@@ -1,7 +1,6 @@
 //created by @inrl
 //more featurs comming soon
-const { inrl, isUrl, googleIt, wikiMedia, ringTone, getYtV, getYtA, weather, movie, mediafire } = require('../lib');
-const { instagram } = require('../lib/database/semifunction/serch_query');
+const { inrl, isUrl, googleIt, wikiMedia, ringTone,getYtV, getYtA, weather, movie, getFilm, Insta, mediafire } = require('../lib');
 const Config = require('../config');
 const util = require('util');
 const {getVar}=require('../lib/database/variable');
@@ -140,14 +139,12 @@ inrl(
                 type : "download"
 	   },
 	async (message, client, match) => {
-                let data = await getVar();
-                let {CAPTION} = data.data[0];
-        if(!match) return message.send('need url after the cmd');
-        let url = await instagram(match.trim());
-        for (let i=0; i<url.length; i++) {
-        return await client.sendMessage( message.from, { video: { url : url[i]}, caption :CAPTION }, { quoted: message })
+        if(message.quoted){
+        match = match || message.quoted.text;
+        }
+        if(!match) return message.send('need instgram url');
+        return await Insta(message, client,match.trim());
          }
-    }
 );
 inrl(
 	   {
@@ -172,3 +169,14 @@ inrl(
 		        })
 		.catch((e) => message.reply('_fileLength is too high_'))
 })
+inrl(
+	   {
+		pattern: ['getfilm'],
+		desc: 'it send result of film',
+                sucReact: "🙃",
+                category: ["system", "all", "downloade"],
+                type : "download"
+	   },
+	async (message, client, match) => {
+    return await getFilm(message, client, match)
+  });
