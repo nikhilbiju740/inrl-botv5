@@ -18,15 +18,19 @@ const isAdmin = async (message, client, match) => {
 	desc: 'no desc',
         sucReact: "💯",
         category: ["system", "all"],
-        type :"info"
+        type :"whatsapp"
 	   },
 	async (m, conn, match ) => {
-        if(!m.client.isCreator) return m.reply('only for owner!')
+        if(!m.client.isCreator) return await m.reply('only for owner!')
             if (!m.isGroup) return m.reply("this plugin only works in group!");
-            const groupMetadata = m.isGroup ? await conn.groupMetadata(m.key.remoteJid).catch((e) => {}) : "";
-            const participants = m.isGroup ? await groupMetadata.participants : "";
+            const groupMetadata = await conn.groupMetadata(m.key.remoteJid).catch((e) => {});
+            const participants = await groupMetadata.participants;
+            if(m.quoted){
+            match = match || m.quoted.text;
+            }
+            if(!match) return await m.reply('need text');
             conn.sendMessage(m.key.remoteJid, {
-                text: m?.quoted?.text || match ? match : "",
+                text: match,
                 mentions: participants.map((a) => a.id),
             }, {
                 quoted: m,
